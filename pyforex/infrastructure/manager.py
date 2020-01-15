@@ -2,7 +2,7 @@ import sys
 
 from pyforex.infrastructure.enums import OSEnum
 from pyforex.infrastructure.library import \
-    TelegramLinuxLibrary, TelegramOSXLibrary, TelegramWindowsLibrary
+    TelegramLibrary, TelegramLinuxLibrary, TelegramOSXLibrary, TelegramWindowsLibrary
 
 class TelegramManagerLibrary(object):
 
@@ -25,5 +25,5 @@ class TelegramManagerLibrary(object):
         else:
             raise Exception("Not implemented yet: {}".format(sys.platform))
 
-    def get_manager(self):
+    def get_manager(self) -> TelegramLibrary:
         return self.__manager

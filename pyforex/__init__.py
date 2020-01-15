@@ -1,4 +1,4 @@
-from pyforex.domain.telegram_domain import TelegramDomain
+from pyforex.domain.telegram import TelegramDomain
 
 import os
 

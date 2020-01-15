@@ -5,18 +5,18 @@ from ctypes import CDLL
 
 import pyforex
 
-class Library(ABC):
+class TelegramLibrary(ABC):
 
     @abstractmethod
     def load_library(self):
         """
-        Return a Telegram 'tdjson' library.
-        Used for a custom implementation depending on OS: OSX, Linux, Windows
+            Return a Telegram 'tdjson' library.
+            Used for a custom implementation depending on OS: OSX, Linux, Windows
         """
         pass
 
 
-class TelegramLinuxLibrary(Library):
+class TelegramLinuxLibrary(TelegramLibrary):
 
     def __init__(self):
         super().__init__()
@@ -29,7 +29,7 @@ class TelegramLinuxLibrary(Library):
             raise Exception("TelegramLinuxLibrary::Cannot load libtdjson.so", identifier)
 
 
-class TelegramOSXLibrary(Library):
+class TelegramOSXLibrary(TelegramLibrary):
 
     def __init__(self):
         super().__init__()
@@ -43,7 +43,7 @@ class TelegramOSXLibrary(Library):
             raise Exception("TelegramOSXLibrary::Cannot load libtdjson.dylib", identifier)
 
 
-class TelegramWindowsLibrary(Library):
+class TelegramWindowsLibrary(TelegramLibrary):
 
     def __init__(self):
         super().__init__()
