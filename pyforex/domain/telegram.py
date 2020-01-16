@@ -1,6 +1,6 @@
 import json
 
-from pyforex.infrastructure.manager import TelegramManagerLibrary
+from pyforex.infrastructure.managers import TelegramManagerLibrary
 
 
 class TelegramClient(object):

@@ -1,7 +1,7 @@
 import sys
 
 from pyforex.infrastructure.enums import OSEnum
-from pyforex.infrastructure.library import \
+from pyforex.infrastructure.libraries import \
     TelegramLibrary, TelegramLinuxLibrary, TelegramOSXLibrary, TelegramWindowsLibrary
 
 class TelegramManagerLibrary(object):
